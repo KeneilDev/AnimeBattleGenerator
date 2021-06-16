@@ -6,32 +6,44 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AnimeBattleFrontEnd.Models;
+using Microsoft.Extensions.Configuration;
+using System.Net.Http;
 
 namespace AnimeBattleFrontEnd.Controllers
 {
+    //FaceOffApi URL: https://localhost:44355/
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ILogger<HomeController> _logger;
+        private IConfiguration Configuration;
+
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            Configuration = configuration;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var faceoOffAPI = $"{Configuration["FaceOffAPI"]}/faceoff";
+            var faceOffAPIResponse = await new HttpClient().GetStringAsync(faceoOffAPI);
+            CreatedCharacter rcCharacter = Newtonsoft.Json.JsonConvert.DeserializeObject<CreatedCharacter>(faceOffAPIResponse);
+            
+            ViewBag.Name = rcCharacter.Name;
+            ViewBag.IconImage1 = rcCharacter.IconImage1;
+            ViewBag.IconImage2 = rcCharacter.IconImage2;
+            ViewBag.Description = rcCharacter.Description;
+            ViewBag.Armor = rcCharacter.Armor;
+            ViewBag.Health = rcCharacter.Health;
+            ViewBag.Energy = rcCharacter.Energy;
+            ViewBag.Magic = rcCharacter.Magic;
+            ViewBag.MagicResist = rcCharacter.MagicResist;
+            ViewBag.Physical = rcCharacter.Physical;
+            ViewBag.Special = rcCharacter.Special;
+            ViewBag.PowerLevel = rcCharacter.PowerLevel;
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }

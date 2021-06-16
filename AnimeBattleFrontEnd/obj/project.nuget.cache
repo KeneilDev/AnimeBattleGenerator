@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1Ldhv5JEtq7HdnRoDcDZk1NFdWvNLn6c80P/u7TVQs8u5kMSbyLuV1Q0U6csm6TURECeD2cIhBZbhiXKOUiC7w==",
+  "dgSpecHash": "SnDFFkNgjZ7F6s9NjXVQQBtcAqXeGubhfbJMMyZwPJwC8bIJ1n2FoigOS6dbQwI4vr5zEjtxVq/sln3kgm7fbA==",
   "success": true,
   "projectFilePath": "C:\\Users\\keneil.jordan\\OneDrive - Avanade\\QA Project 2\\Code\\AnimeBattleFrontEnd\\AnimeBattleFrontEnd.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\keneil.jordan\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

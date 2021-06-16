@@ -3,6 +3,34 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-5 p-3 border-bottom">Welcome to the Anime Battle Generator</h1>
+    <p class="mt-3 pb-3 border-bottom">This app generates an anime character's power level based on their Clan and Class name which is taken from another service.</p>
+</div>
+<div class="container-fluid mt-5" align="center" >
+    <div class="card" style="width: 18rem;">
+        <div class="d-flex">
+            <img src="@ViewBag.IconImage1" class="p-3 rounded float-left" width="150" height="
+                 150" alt="...">
+            <img src="@ViewBag.IconImage2" class="p-3 rounded float-right" width="150" height="
+                 150" alt="...">
+        </div>
+     
+        <div class="card-body">
+            <h5 class="card-title">@ViewBag.Name</h5>
+            <p class="card-text">@ViewBag.Description</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Health: @ViewBag.Health </li>
+            <li class="list-group-item">Energy: @ViewBag.Energy</li>
+            <li class="list-group-item">Physical: @ViewBag.Physical</li>
+            <li class="list-group-item">Armor: @ViewBag.Armor </li>
+            <li class="list-group-item">Magic: @ViewBag.Magic</li>
+            <li class="list-group-item">Magic Resist: @ViewBag.MagicResist</li>
+            <li class="list-group-item">Special: @ViewBag.Special</li>
+            <li class="list-group-item">Power Level: @ViewBag.PowerLevel</li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Generate New Card</a>
+        </div>
+    </div>
 </div>

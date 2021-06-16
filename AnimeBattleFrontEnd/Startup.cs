@@ -23,6 +23,9 @@ namespace AnimeBattleFrontEnd
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //LowerCase URLS (make life easy no?)
+            services.AddRouting(r => r.LowercaseUrls = true);
+
             services.AddControllersWithViews();
         }
 
