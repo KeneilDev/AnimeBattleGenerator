@@ -237,11 +237,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\keneil.jordan\\OneDrive - Avanade\\QA Project 2\\Code\\FaceOffAPI\\FaceOffAPI.csproj",
+      "projectUniqueName": "C:\\Users\\keneil.jordan\\Source\\Repos\\KeneilDev\\AnimeBattleGenerator\\FaceOffAPI\\FaceOffAPI.csproj",
       "projectName": "FaceOffAPI",
-      "projectPath": "C:\\Users\\keneil.jordan\\OneDrive - Avanade\\QA Project 2\\Code\\FaceOffAPI\\FaceOffAPI.csproj",
+      "projectPath": "C:\\Users\\keneil.jordan\\Source\\Repos\\KeneilDev\\AnimeBattleGenerator\\FaceOffAPI\\FaceOffAPI.csproj",
       "packagesPath": "C:\\Users\\keneil.jordan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\keneil.jordan\\OneDrive - Avanade\\QA Project 2\\Code\\FaceOffAPI\\obj\\",
+      "outputPath": "C:\\Users\\keneil.jordan\\Source\\Repos\\KeneilDev\\AnimeBattleGenerator\\FaceOffAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

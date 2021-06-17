@@ -7,6 +7,7 @@ using FaceOffAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace FaceOffAPI.Controllers
 {
@@ -18,23 +19,23 @@ namespace FaceOffAPI.Controllers
         //ClanAPI Url: https://localhost:44345/
 
 
-        private IConfiguration Configuration;
-        public FaceOffController(IConfiguration configuration)
+        private AppSettings Configuration;
+        public FaceOffController(IOptions<AppSettings> settings)
         {
-            Configuration = configuration;
+            Configuration = settings.Value;
         }
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             //Recieves the Class details
-            var classAPI = $"{Configuration["ClassAPI"]}/class";
-            var classresponse = await new HttpClient().GetStringAsync(classAPI);
+            var classAPIURL = $"{Configuration.ClassAPIURL}/class";
+            var classresponse = await new HttpClient().GetStringAsync(classAPIURL);
             // Uses JsonConvert to parse the json into a class object
             Class rcClass = Newtonsoft.Json.JsonConvert.DeserializeObject<Class>(classresponse);
             
             //Recieves the Clan details
-            var clanAPI = $"{Configuration["ClanAPI"]}/clan";
-            var clanresponse = await new HttpClient().GetStringAsync(clanAPI);
+            var clanAPIURL = $"{Configuration.ClanAPIURL}/clan";
+            var clanresponse = await new HttpClient().GetStringAsync(clanAPIURL);
             // Uses JsonConvert to parse the json into a class object
             Clan rcClan = Newtonsoft.Json.JsonConvert.DeserializeObject<Clan>(clanresponse);
 

@@ -200,11 +200,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\keneil.jordan\\OneDrive - Avanade\\QA Project 2\\Code\\ClassAPI\\ClassAPI.csproj",
+      "projectUniqueName": "C:\\Users\\keneil.jordan\\Source\\Repos\\KeneilDev\\AnimeBattleGenerator\\ClassAPI\\ClassAPI.csproj",
       "projectName": "ClassAPI",
-      "projectPath": "C:\\Users\\keneil.jordan\\OneDrive - Avanade\\QA Project 2\\Code\\ClassAPI\\ClassAPI.csproj",
+      "projectPath": "C:\\Users\\keneil.jordan\\Source\\Repos\\KeneilDev\\AnimeBattleGenerator\\ClassAPI\\ClassAPI.csproj",
       "packagesPath": "C:\\Users\\keneil.jordan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\keneil.jordan\\OneDrive - Avanade\\QA Project 2\\Code\\ClassAPI\\obj\\",
+      "outputPath": "C:\\Users\\keneil.jordan\\Source\\Repos\\KeneilDev\\AnimeBattleGenerator\\ClassAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

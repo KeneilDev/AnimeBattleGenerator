@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5oXXfjxU5sgwEOY2SXn56xz3PBI3oW9nztovhQzJ4EVZbb56BYwZPINRmLMU+IYckDU3O9ZLrxWQUIvEgQ7OZA==",
+  "dgSpecHash": "EBitADT6xH1Ut9cI0XvITa06zRogi2k6L0Zk/O9PdndB62JbT36VVCDQIXrzEfF9EctxpfhNiqvWQfp2XYYaAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\keneil.jordan\\OneDrive - Avanade\\QA Project 2\\Code\\ClassAPI\\ClassAPI.csproj",
+  "projectFilePath": "C:\\Users\\keneil.jordan\\Source\\Repos\\KeneilDev\\AnimeBattleGenerator\\ClassAPI\\ClassAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\keneil.jordan\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\keneil.jordan\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

@@ -16,9 +16,16 @@ namespace FaceOffAPI
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IWebHostEnvironment env)
         {
-            Configuration = configuration;
+
+            //Custom ConfigurationBuilder
+             var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+            builder.AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -28,8 +35,11 @@ namespace FaceOffAPI
         {
             //LowerCase URLS (make life easy no?)
             services.AddRouting(r => r.LowercaseUrls = true);
-
             services.AddControllers();
+
+            services.Configure<AppSettings>(options => Configuration.GetSection("AppSettings").Bind(options));
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FaceOffAPI", Version = "v1" });

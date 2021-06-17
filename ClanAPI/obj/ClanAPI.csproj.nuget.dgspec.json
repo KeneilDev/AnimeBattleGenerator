@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\keneil.jordan\\OneDrive - Avanade\\QA Project 2\\Code\\ClanAPI\\ClanAPI.csproj": {}
+    "C:\\Users\\keneil.jordan\\Source\\Repos\\KeneilDev\\AnimeBattleGenerator\\ClanAPI\\ClanAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\keneil.jordan\\OneDrive - Avanade\\QA Project 2\\Code\\ClanAPI\\ClanAPI.csproj": {
+    "C:\\Users\\keneil.jordan\\Source\\Repos\\KeneilDev\\AnimeBattleGenerator\\ClanAPI\\ClanAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\keneil.jordan\\OneDrive - Avanade\\QA Project 2\\Code\\ClanAPI\\ClanAPI.csproj",
+        "projectUniqueName": "C:\\Users\\keneil.jordan\\Source\\Repos\\KeneilDev\\AnimeBattleGenerator\\ClanAPI\\ClanAPI.csproj",
         "projectName": "ClanAPI",
-        "projectPath": "C:\\Users\\keneil.jordan\\OneDrive - Avanade\\QA Project 2\\Code\\ClanAPI\\ClanAPI.csproj",
+        "projectPath": "C:\\Users\\keneil.jordan\\Source\\Repos\\KeneilDev\\AnimeBattleGenerator\\ClanAPI\\ClanAPI.csproj",
         "packagesPath": "C:\\Users\\keneil.jordan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\keneil.jordan\\OneDrive - Avanade\\QA Project 2\\Code\\ClanAPI\\obj\\",
+        "outputPath": "C:\\Users\\keneil.jordan\\Source\\Repos\\KeneilDev\\AnimeBattleGenerator\\ClanAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
