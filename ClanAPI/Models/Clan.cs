@@ -1,11 +1,13 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace ClanAPI.Models
 {
+    [ExcludeFromCodeCoverage]
     public class Clan
     {
         public int Id { get; set; }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace ClassAPI.Models
 {
+    [ExcludeFromCodeCoverage]
     public class Class
     {
         public int Id { get; set; }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -11,11 +12,24 @@ using Microsoft.Extensions.Hosting;
 
 namespace AnimeBattleFrontEnd
 {
+    [ExcludeFromCodeCoverage]
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        //public Startup(IConfiguration configuration)
+        //{
+        //    Configuration = configuration;
+        //}
+
+        public Startup(IWebHostEnvironment env)
         {
-            Configuration = configuration;
+
+            //Custom ConfigurationBuilder
+            var builder = new ConfigurationBuilder()
+               .SetBasePath(env.ContentRootPath)
+               .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+               .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+            builder.AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -27,6 +41,9 @@ namespace AnimeBattleFrontEnd
             services.AddRouting(r => r.LowercaseUrls = true);
 
             services.AddControllersWithViews();
+
+            services.Configure<AppSettings>(options => Configuration.GetSection("AppSettings").Bind(options));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

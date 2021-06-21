@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using AnimeBattleFrontEnd.Models;
 using Microsoft.Extensions.Configuration;
 using System.Net.Http;
+using Microsoft.Extensions.Options;
 
 namespace AnimeBattleFrontEnd.Controllers
 {
@@ -16,17 +17,19 @@ namespace AnimeBattleFrontEnd.Controllers
     {
 
         private readonly ILogger<HomeController> _logger;
-        private IConfiguration Configuration;
+        //private IConfiguration Configuration;
+        private AppSettings Configuration;
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
+
+        public HomeController(ILogger<HomeController> logger, IOptions<AppSettings> settings)
         {
             _logger = logger;
-            Configuration = configuration;
+            Configuration = settings.Value;
         }
 
         public async Task<IActionResult> Index()
         {
-            var faceoOffAPI = $"{Configuration["FaceOffAPI"]}/faceoff";
+            var faceoOffAPI = $"{Configuration.FaceOffAPIURL}/faceoff";
             var faceOffAPIResponse = await new HttpClient().GetStringAsync(faceoOffAPI);
             CreatedCharacter rcCharacter = Newtonsoft.Json.JsonConvert.DeserializeObject<CreatedCharacter>(faceOffAPIResponse);
             
