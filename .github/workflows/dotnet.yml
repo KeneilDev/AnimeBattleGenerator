@@ -24,5 +24,5 @@ jobs:
       uses: azure/webapps-deploy@v1
       with: 
         app-name: AnimeBattleGenerator # Replace with your app name
-        publish-profile: $kwa_publishprofile
-        package: './dotnetcorewebapp' 
+        publish-profile: $secrets.kwa_publishprofile
+        package: './AnimeBattleGenerator' 
