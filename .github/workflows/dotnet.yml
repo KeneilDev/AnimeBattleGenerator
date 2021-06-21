@@ -13,8 +13,7 @@ env:
   FACEOFF_AZURE_WEBAPP_PACKAGE_PATH: ./AnimeBattleGenerator/FaceOffAPI/published
   FE_DIRECTORY: ./AnimeBattleGenerator/AnimeBattleFrontEnd
   FE_AZURE_WEBAPP_PACKAGE_PATH: ./AnimeBattleGenerator/AnimeBattleFrontEnd/published
-  TEST_DIRECTORY: ./code/tests
-
+  
 jobs:
   #build:
 
