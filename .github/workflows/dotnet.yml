@@ -1,10 +1,6 @@
-name: .NET
+name: .NET Core
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push]
 
 jobs:
   build:
@@ -12,14 +8,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup dotnet
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '5.0.x'
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build
-    - name: Test with the dotnet CLI
-      run: dotnet test
+        dotnet-version: 5.0.0
+    
+    # dotnet build and publish
+    - name: Build with dotnet
+      run: dotnet build --configuration Release
+    - name: dotnet publish
+      run: |
+        dotnet publish -c Release -o dotnetcorewebapp 
+    - name: 'Run Azure webapp deploy action using publish profile credentials'
+      uses: azure/webapps-deploy@v1
+      with: 
+        app-name: AnimeBattleGenerator # Replace with your app name
+        publish-profile: $kwa_publishprofile
+        package: './dotnetcorewebapp' 
