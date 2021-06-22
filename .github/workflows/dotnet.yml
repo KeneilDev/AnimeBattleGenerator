@@ -6,13 +6,13 @@ env:
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 5.0.x
   CLASS_DIRECTORY: ./AnimeBattleGenerator/ClassAPI
-  CLASS_AZURE_WEBAPP_PACKAGE_PATH: ./AnimeBattleGenerator/ClassAPI/published
+  CLASS_AZURE_WEBAPP_PACKAGE_PATH: ./ClassAPI/published
   CLAN_DIRECTORY: ./AnimeBattleGenerator/ClanAPI
-  CLAN_AZURE_WEBAPP_PACKAGE_PATH: ./AnimeBattleGenerator/ClanAPI/published
+  CLAN_AZURE_WEBAPP_PACKAGE_PATH: ./ClanAPI/published
   FACEOFF_DIRECTORY: ./AnimeBattleGenerator/FaceOffAPI
-  FACEOFF_AZURE_WEBAPP_PACKAGE_PATH: ./AnimeBattleGenerator/FaceOffAPI/published
+  FACEOFF_AZURE_WEBAPP_PACKAGE_PATH: ./FaceOffAPI/published
   FE_DIRECTORY: ./AnimeBattleGenerator/AnimeBattleFrontEnd
-  FE_AZURE_WEBAPP_PACKAGE_PATH: ./AnimeBattleGenerator/AnimeBattleFrontEnd/published
+  FE_AZURE_WEBAPP_PACKAGE_PATH: ./AnimeBattleFrontEnd/published
   
 jobs:
   #build:
