@@ -4,7 +4,7 @@ on:
     branches:
     - master
 env:
-  AZURE_WEBAPP_NAME: animeclassapi
+  AZURE_WEBAPP_NAME: animebattlefrontend
   AZURE_WEBAPP_PACKAGE_PATH: AnimeBattleFrontEnd/publish
   AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.FRONTEND_PP }}
   CONFIGURATION: Release
