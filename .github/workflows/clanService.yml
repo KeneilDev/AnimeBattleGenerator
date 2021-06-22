@@ -33,7 +33,7 @@ jobs:
     - name: Deploy to Azure WebApp
       uses: azure/webapps-deploy@v2
       with:
-        app-name: animeclanapi 
+        app-name: animebattleclanapi 
         publish-profile: ${{ secrets.CLAN_PP }}
         package: ${{ env.CLAN_AZURE_WEBAPP_PACKAGE_PATH }}
     - name: Publish Artifacts
