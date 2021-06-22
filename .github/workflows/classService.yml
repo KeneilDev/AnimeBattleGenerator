@@ -1,0 +1,43 @@
+name: Deploy Class AppService for Keneils Project
+
+on: 
+  push:
+    branches:
+    - master
+
+env:
+  CONFIGURATION: Release
+  DOTNET_CORE_VERSION: 5.0.x
+  CLASS_DIRECTORY: ClassAPI
+  CLASS_AZURE_WEBAPP_PACKAGE_PATH: ./ClassAPI/published
+  
+jobs:
+  
+  #build:
+  build-class-service:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
+    - name: Restore
+      run: dotnet restore "${{ env.CLASS_DIRECTORY }}"
+    - name: Build
+      run: dotnet build "${{ env.CLASS_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
+    - name: Test
+      run: dotnet test "${{ env.CLASS_DIRECTORY }}" --no-build
+    - name: Publish
+      run: dotnet publish "${{ env.CLASS_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.CLASS_AZURE_WEBAPP_PACKAGE_PATH }}"
+    - name: Deploy to Azure WebApp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: animeclassapi 
+        publish-profile: ${{ secrets.CLASS_PP }}
+        package: ${{ env.CLASS_AZURE_WEBAPP_PACKAGE_PATH }}
+    - name: Publish Artifacts
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: webapp
+        path: ${{ env.CLASS_AZURE_WEBAPP_PACKAGE_PATH }}
