@@ -1,4 +1,4 @@
-name: Deploying All .NET Core AppServices
+name: Deploying All .NET Core AppServices for Keneils Project
 
 on: [push]
 
