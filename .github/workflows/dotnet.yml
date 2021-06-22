@@ -50,8 +50,8 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
-      - name: Restore
-        run: dotnet restore "${{ env.CLASS_DIRECTORY }}"
+     # - name: Restore
+     #   run: dotnet restore "${{ env.CLASS_DIRECTORY }}"
       - name: Build
         run: dotnet build "${{ env.CLASS_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
       - name: 'Run Azure webapp deploy action using publish profile credentials'
@@ -71,8 +71,8 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
-      - name: Restore
-        run: dotnet restore "${{ env.CLAN_DIRECTORY }}"
+     # - name: Restore
+     #   run: dotnet restore "${{ env.CLAN_DIRECTORY }}"
       - name: Build
         run: dotnet build "${{ env.CLAN_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
       - name: 'Run Azure webapp deploy action using publish profile credentials'
@@ -92,8 +92,8 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
-      - name: Restore
-        run: dotnet restore "${{ env.FACEOFF_DIRECTORY }}"
+     # - name: Restore
+     #   run: dotnet restore "${{ env.FACEOFF_DIRECTORY }}"
       - name: Build
         run: dotnet build "${{ env.FACEOFF_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
       - name: 'Run Azure webapp deploy action using publish profile credentials'
@@ -113,8 +113,8 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
-      - name: Restore
-        run: dotnet restore "${{ env.FE_DIRECTORY }}"
+     # - name: Restore
+     #   run: dotnet restore "${{ env.FE_DIRECTORY }}"
       - name: Build
         run: dotnet build "${{ env.FE_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
       - name: 'Run Azure webapp deploy action using publish profile credentials'
