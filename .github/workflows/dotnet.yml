@@ -53,7 +53,7 @@ jobs:
      # - name: Restore
      #   run: dotnet restore "${{ env.CLASS_DIRECTORY }}"
       - name: Build
-        run: dotnet build "${{ env.CLASS_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
+        run: dotnet build --configuration Release
       - name: 'Run Azure webapp deploy action using publish profile credentials'
         uses: azure/webapps-deploy@v1
         with: 
@@ -74,7 +74,7 @@ jobs:
      # - name: Restore
      #   run: dotnet restore "${{ env.CLAN_DIRECTORY }}"
       - name: Build
-        run: dotnet build "${{ env.CLAN_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
+        run: dotnet build --configuration Release
       - name: 'Run Azure webapp deploy action using publish profile credentials'
         uses: azure/webapps-deploy@v1
         with: 
@@ -95,7 +95,7 @@ jobs:
      # - name: Restore
      #   run: dotnet restore "${{ env.FACEOFF_DIRECTORY }}"
       - name: Build
-        run: dotnet build "${{ env.FACEOFF_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
+        run: dotnet build --configuration Release
       - name: 'Run Azure webapp deploy action using publish profile credentials'
         uses: azure/webapps-deploy@v1
         with: 
@@ -116,7 +116,7 @@ jobs:
      # - name: Restore
      #   run: dotnet restore "${{ env.FE_DIRECTORY }}"
       - name: Build
-        run: dotnet build "${{ env.FE_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
+        run: dotnet build --configuration Release
       - name: 'Run Azure webapp deploy action using publish profile credentials'
         uses: azure/webapps-deploy@v1
         with: 
