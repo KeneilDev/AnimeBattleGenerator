@@ -1,11 +1,14 @@
 name: New Deploy All .NET Core AppServices for Keneils Project
 
-on: [push]
+on: 
+  push:
+    branches:
+    - main
 
 env:
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 5.0.x
-  CLASS_DIRECTORY: ./ClassAPI
+  CLASS_DIRECTORY: ClassAPI
   CLASS_AZURE_WEBAPP_PACKAGE_PATH: ./ClassAPI/published
   CLAN_DIRECTORY: ./ClanAPI
   CLAN_AZURE_WEBAPP_PACKAGE_PATH: ./ClanAPI/published
