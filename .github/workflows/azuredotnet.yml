@@ -38,7 +38,7 @@ jobs:
       with:
         app-name: ClanAPI20210622122141
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-        publish-profile: ${{ env.NEW_CLN_PP }}
+        publish-profile: ${{ env.NEW_CLAN_PP }}
     - name: Publish Artifacts
       uses: actions/upload-artifact@v1.0.0
       with:
