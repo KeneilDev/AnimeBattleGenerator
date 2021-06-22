@@ -3,7 +3,7 @@ name: New Deploy All .NET Core AppServices for Keneils Project
 on: 
   push:
     branches:
-    - main
+    - master
 
 env:
   CONFIGURATION: Release
