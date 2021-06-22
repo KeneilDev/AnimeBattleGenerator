@@ -47,6 +47,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Setup .NET Core
+        
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
@@ -55,7 +56,7 @@ jobs:
         run: dotnet restore "${{ env.CLASS_DIRECTORY }}"
       
       - name: Build
-        run: dotnet build ${{ env.CLASS_DIRECTORY }}
+        run: dotnet build ${{ env.CLASS_DIRECTORY }} --configuration Release --no-restore
         
       - name: 'Publish a Release of the App'
         run: dotnet publish "${{ env.CLASS_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --output "${{ env. CLASS_AZURE_WEBAPP_PACKAGE_PATH }}"
@@ -80,7 +81,7 @@ jobs:
       - name: Restore
         run: dotnet restore "${{ env.CLAN_DIRECTORY }}"
       - name: Build
-        run: dotnet build ${{ env.CLAN_DIRECTORY }}
+        run: dotnet build ${{ env.CLAN_DIRECTORY }} --configuration Release --no-restore
       - name: 'Publish a Release of the App'
         run: dotnet publish "${{ env.CLAN_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --output "${{ env.CLAN_AZURE_WEBAPP_PACKAGE_PATH }}"
       - name: 'Run Azure webapp deploy action using publish profile credentials'
@@ -103,7 +104,7 @@ jobs:
       - name: Restore
         run: dotnet restore "${{ env.FACEOFF_DIRECTORY }}"
       - name: Build
-        run: dotnet build ${{ env.FACEOFF_DIRECTORY }}
+        run: dotnet build ${{ env.FACEOFF_DIRECTORY }} --configuration Release --no-restore
       - name: 'Publish a Release of the App'
         run: dotnet publish "${{ env.FACEOFF_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --output "${{ env.FACEOFF_AZURE_WEBAPP_PACKAGE_PATH }}"
       - name: 'Run Azure webapp deploy action using publish profile credentials'
@@ -126,7 +127,7 @@ jobs:
       - name: Restore
         run: dotnet restore "${{ env.FE_DIRECTORY }}"
       - name: Build
-        run: dotnet build ${{ env.FE_DIRECTORY }}
+        run: dotnet build ${{ env.FE_DIRECTORY }} --configuration Release --no-restore
       - name: 'Publish a Release of the App'
         run: dotnet publish "${{ env.FE_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --output "${{ env.FE_AZURE_WEBAPP_PACKAGE_PATH }}"
       - name: 'Run Azure webapp deploy action using publish profile credentials'
