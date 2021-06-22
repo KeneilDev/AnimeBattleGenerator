@@ -52,17 +52,22 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@master
       - name: Setup .NET Core
-        uses: azure/webapps-deploy@v2
+      
+        uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
+      
       - name: Restore
         run: dotnet restore "${{ env.CLAN_DIRECTORY }}"
+      
       - name: Build
         run: dotnet build ${{ env.CLAN_DIRECTORY }} --configuration Release --no-restore
+      
       - name: 'Publish a Release of the App'
         run: dotnet publish "${{ env.CLAN_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --output "${{ env.CLAN_AZURE_WEBAPP_PACKAGE_PATH }}"
+      
       - name: 'Run Azure webapp deploy action using publish profile credentials'
-        uses: azure/webapps-deploy@v1
+        uses: azure/webapps-deploy@v2
         with: 
           app-name: animeclanapi 
           publish-profile: ${{ secrets.CLAN_PP}}
