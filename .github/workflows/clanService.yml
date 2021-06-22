@@ -1,0 +1,43 @@
+name: Deploy Clan AppService for Keneils Project
+
+on: 
+  push:
+    branches:
+    - master
+
+env:
+  CONFIGURATION: Release
+  DOTNET_CORE_VERSION: 5.0.x
+  CLAN_DIRECTORY: ClanAPI
+  CLAN_AZURE_WEBAPP_PACKAGE_PATH: ./ClanAPI/published
+  
+jobs:
+  
+  #build:
+  build-clan-service:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
+    - name: Restore
+      run: dotnet restore "${{ env.CLAN_DIRECTORY }}"
+    - name: Build
+      run: dotnet build "${{ env.CLAN_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
+    - name: Test
+      run: dotnet test "${{ env.CLAN_DIRECTORY }}" --no-build
+    - name: Publish
+      run: dotnet publish "${{ env.CLAN_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.CLAN_AZURE_WEBAPP_PACKAGE_PATH }}"
+    - name: Deploy to Azure WebApp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: animeclanapi 
+        publish-profile: ${{ secrets.CLAN_PP }}
+        package: ${{ env.CLAN_AZURE_WEBAPP_PACKAGE_PATH }}
+    - name: Publish Artifacts
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: webapp
+        path: ${{ env.CLAN_AZURE_WEBAPP_PACKAGE_PATH }}
