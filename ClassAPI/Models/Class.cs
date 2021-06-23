@@ -9,7 +9,6 @@ namespace ClassAPI.Models
     [ExcludeFromCodeCoverage]
     public class Class
     {
-        public int Id { get; set; }
         public string IconImage { get; set; }
         public string Name { get; set; }
         public int Health { get; set; }

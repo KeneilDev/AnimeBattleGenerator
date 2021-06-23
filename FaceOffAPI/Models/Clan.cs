@@ -8,7 +8,6 @@ namespace FaceOffAPI.Models
 {
     public class Clan
     {
-        public int Id { get; set; }
         public string IconImage { get; set; }
         public string Name { get; set; }
         public int Health { get; set; }

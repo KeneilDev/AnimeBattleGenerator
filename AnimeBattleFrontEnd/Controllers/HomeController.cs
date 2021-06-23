@@ -12,7 +12,6 @@ using Microsoft.Extensions.Options;
 
 namespace AnimeBattleFrontEnd.Controllers
 {
-    //FaceOffApi URL: https://localhost:44355/
     public class HomeController : Controller
     {
 
@@ -29,10 +28,12 @@ namespace AnimeBattleFrontEnd.Controllers
 
         public async Task<IActionResult> Index()
         {
+            //Get's string value from the merge service and deserializes it using a Json Converter
             var faceoOffAPI = $"{Configuration.FaceOffAPIURL}/faceoff";
             var faceOffAPIResponse = await new HttpClient().GetStringAsync(faceoOffAPI);
             CreatedCharacter rcCharacter = Newtonsoft.Json.JsonConvert.DeserializeObject<CreatedCharacter>(faceOffAPIResponse);
             
+            //Send all the values to html 
             ViewBag.Name = rcCharacter.Name;
             ViewBag.IconImage1 = rcCharacter.IconImage1;
             ViewBag.IconImage2 = rcCharacter.IconImage2;
