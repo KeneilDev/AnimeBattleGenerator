@@ -100,7 +100,7 @@ Only one of the controllers for this application was tested using xUnit testing 
 
 Below is a screenshot of the coverage report :
 
-![Alt text](/Projectmages/test1.PNG "Test Coverage 1")
+![Alt text](/ProjectImages/test1.PNG "Test Coverage 1")
 
 <a name="frontenddesign"></a>
 ## 5. Front-End Design
