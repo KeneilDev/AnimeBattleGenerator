@@ -1,6 +1,6 @@
 
 # AnimeBattleGenerator
-## QA CRUD Application Project 2🌐
+## QA Application Project 2🌐
 
 
 
