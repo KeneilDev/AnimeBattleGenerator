@@ -58,13 +58,13 @@ Pictured below is an entity relationship diagram (ERD) showing the structure of 
 
 ERD:
 
-![Alt text](/ProjectImages/ERD.png "ERD")
+![Alt text](/ProjectImages/ERD.PNG "ERD")
 
 
 
 **CI Pipeline**
 
-![Alt text](/ReadmeImages/image005.png "Pipeline")
+![Alt text](/ReadmeImages/image005.PNG "Pipeline")
 
 The picture above shows the structure of my CI Pipeline. It works from using my local machine and push the code to GitHub which is linked to my Azure Web Apps which has continuous integration using GitHub Actions. I also used a terraform script to create my App Services and App Plan on azure which will update each time a change is pushed to my main branch on GitHub. This virtually means there is next to no downtime once the process is complete.
 
@@ -73,7 +73,7 @@ The picture above shows the structure of my CI Pipeline. It works from using my 
 
 Trello was used to track the progress of the project (pictured below). You can find the link to this board here: [QA Project 2 | Trello](https://trello.com/invite/b/1NeeAYvM/45ba408c76c6e07c09cee17f80159988/generator-project)
 
-![Alt text](/ProjectImages/Trello.png "Trello Board")
+![Alt text](/ProjectImages/Trello.PNG "Trello Board")
 
 The board has been designed and structured to move from left to right from of the project implementation. The summary of each card is stated below
 
@@ -90,7 +90,7 @@ The board has been designed and structured to move from left to right from of th
 
 The risk assessment matrix for this project can be found below in the screenshot :
 
-![Alt text](/ProjectImages/RiskAssessment.png "Risk ssessment")
+![Alt text](/ProjectImages/RiskAssessment.PNG "Risk ssessment")
 
 
 <a name="testing"></a>
@@ -100,22 +100,22 @@ Only one of the controllers for this application was tested using xUnit testing 
 
 Below is a screenshot of the coverage report :
 
-![Alt text](/Projectmages/test1.png "Test Coverage 1")
+![Alt text](/Projectmages/test1.PNG "Test Coverage 1")
 
 <a name="frontenddesign"></a>
 ## 5. Front-End Design
 
 When the web app is first launched the user will be brought to this home page:
 
-![Alt text](/ProjectImages/FrontEnd.png "Home")
+![Alt text](/ProjectImages/FrontEnd.PNG "Home")
 
 Here are also some Swagger Screenshots of the Services:
 Class API:
-![Alt text](/ProjectImages/ClassAPI.png "ClassAPI")
+![Alt text](/ProjectImages/ClassAPI.PNG "ClassAPI")
 Clan API:
-![Alt text](/ProjectImages/ClanAPI.png "ClanAPI")
+![Alt text](/ProjectImages/ClanAPI.PNG "ClanAPI")
 FaceOffAPI:
-![Alt text](/ProjectImages/FaceOffAPI.png "FaceOffAPI")
+![Alt text](/ProjectImages/FaceOffAPI.PNG "FaceOffAPI")
 
 
 <a name="knownissues"></a>
